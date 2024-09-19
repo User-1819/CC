@@ -53,9 +53,7 @@ const cc_result ReturnCode_DirectoryExists  = EEXIST;
 /* TODO: Use load_image/resume_thread instead of fork */
 /* Otherwise opening browser never works because fork fails */
 #include <kernel/image.h>
-#if defined CC_BUILD_IOS
-const char* Platform_AppNameSuffix = " (iOS)";
-#elif defined CC_BUILD_LINUX
+#if defined CC_BUILD_LINUX
 const char* Platform_AppNameSuffix = " (Linux)";
 #else
 const char* Platform_AppNameSuffix = "";
