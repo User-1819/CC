@@ -41,7 +41,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 32 bit CC Windows build'
+          NOTIFY_MESSAGE: 'Failed to compile 32 bit CC Windows build! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -104,7 +104,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 64 bit CC Windows build'
+          NOTIFY_MESSAGE: 'Failed to compile 64 bit CC Windows build! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
