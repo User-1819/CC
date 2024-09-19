@@ -14,11 +14,14 @@ Copyright 2014-2022 ClassiCube | Licensed under BSD-3
 #if defined CC_BUILD_WEB
 #define GAME_APP_ALT   "ClassiCube 1.3.6 web mobile"
 #define GAME_APP_TITLE "ClassiCube"
-#elif defined CC_BUILD_LINUX
+#endif
+#if defined CC_BUILD_LINUX
 const char* Platform_AppNameSuffix = " (Linux)";
-#elif defined CC_BUILD_ANDROID
+#endif
+#if defined CC_BUILD_ANDROID
 #define GAME_APP_TITLE "ClassiCube 1.3.6 android"
-#elif defined CC_BUILD_IOS
+#endif
+#if defined CC_BUILD_IOS
 #define GAME_APP_TITLE "ClassiCube 1.3.6 iOS"
 #else
 #define GAME_APP_NAME  "ClassiCube 1.3.6"
