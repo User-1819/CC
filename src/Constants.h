@@ -38,7 +38,6 @@ Copyright 2014-2022 ClassiCube | Licensed under BSD-3
 #define CHUNK_MASK 15
 /* Chunk index for a coordinate. */
 #define CHUNK_SHIFT 4
-
 /* Chunk axis length (plus neighbours) in blocks. */
 #define EXTCHUNK_SIZE 18
 #define EXTCHUNK_SIZE_2 (EXTCHUNK_SIZE * EXTCHUNK_SIZE)
