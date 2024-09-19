@@ -1,4 +1,4 @@
-name: Build latest (Linux)
+name: Build latest (Linux 64 bit)
 # trigger via either push to selected branches or on manual run
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.ref }}-linux
+  group: ${{ github.ref }}-linux64
   cancel-in-progress: true
 
 jobs:
