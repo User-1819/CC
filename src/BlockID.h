@@ -2,8 +2,9 @@
 #define CC_BLOCKID_H
 #include "Core.h" /* TODO: Remove this include when we move to external defines */
 /* List of all core/standard block IDs
-   Copyright 2014-2022 ClassiCube | Licensed under BSD-3
+   Copyright 2014-2023 ClassiCube | Licensed under BSD-3
 */
+CC_BEGIN_HEADER
 
 enum BLOCKID {
 	/* Classic blocks */
@@ -82,10 +83,12 @@ enum BLOCKID {
 	BLOCK_MAX_CPE = BLOCK_STONE_BRICK,
 
 #ifdef EXTENDED_BLOCKS
-	BLOCK_MAX_DEFINED = 0x2FF,
+	BLOCK_MAX_DEFINED = 0x6FF,//0x2FF
 #else
 	BLOCK_MAX_DEFINED = 0xFF,
 #endif
 	BLOCK_COUNT = (BLOCK_MAX_DEFINED + 1)
 };
+
+CC_END_HEADER
 #endif

@@ -2,30 +2,23 @@
 #define CC_CONSTANTS_H
 /* 
 Defines useful constants
-Copyright 2014-2022 ClassiCube | Licensed under BSD-3
+Copyright 2014-2023 ClassiCube | Licensed under BSD-3
 */
 
+
 #define GAME_MAX_CMDARGS 5
-//Note: This is actually 1.3.5, but send 1.3.6 
-// to servers to prevent being kicked due to outdated client.
-#define GAME_APP_VER "1.3.6"
+#define CC_APP_VER "1.3.6"
+#define APP_VER "1.0.5"
 #define GAME_API_VER 1
 
-#if defined CC_BUILD_WEB
-#define GAME_APP_ALT   "ClassiCube 1.3.6 web mobile"
-#define GAME_APP_TITLE "ClassiCube"
-#endif
-#if defined CC_BUILD_LINUX
-const char* Platform_AppNameSuffix = " (Linux)";
-#endif
-#if defined CC_BUILD_ANDROID
-#define GAME_APP_TITLE "ClassiCube 1.3.6 android"
-#endif
-#if defined CC_BUILD_IOS
-#define GAME_APP_TITLE "ClassiCube 1.3.6 iOS"
-#else
+#if defined CC_BUILD_OG
 #define GAME_APP_NAME  "ClassiCube 1.3.6"
 #define GAME_APP_TITLE "ClassiCube 1.3.6"
+#else
+#define CC_APP_NAME  "ClassiCube 1.3.6"
+#define LONG_GAME_APP_NAME "&4H&6a&5r&0m&7o&2n&dy &c1.&e0.&d5 &aBeta"
+#define GAME_APP_NAME  "&6Harmony &d1.0.5 &aBeta"
+#define GAME_APP_TITLE "Harmony 1.0.5 Beta"
 #endif
 /* Max number of characters strings can have. */
 #define STRING_SIZE 64
@@ -43,6 +36,7 @@ const char* Platform_AppNameSuffix = " (Linux)";
 #define CHUNK_MASK 15
 /* Chunk index for a coordinate. */
 #define CHUNK_SHIFT 4
+
 /* Chunk axis length (plus neighbours) in blocks. */
 #define EXTCHUNK_SIZE 18
 #define EXTCHUNK_SIZE_2 (EXTCHUNK_SIZE * EXTCHUNK_SIZE)
@@ -57,12 +51,12 @@ const char* Platform_AppNameSuffix = " (Linux)";
 #define GUI_MAX_CHATLINES 30
 
 enum FACE_CONSTS {
-	FACE_XMIN = 0, /* Face X = 0 */
-	FACE_XMAX = 1, /* Face X = 1 */
-	FACE_ZMIN = 2, /* Face Z = 0 */
-	FACE_ZMAX = 3, /* Face Z = 1 */
-	FACE_YMIN = 4, /* Face Y = 0 */
-	FACE_YMAX = 5, /* Face Y = 1 */
+	FACE_XMIN = 0, FACE_BIT_XMIN = 1 << FACE_XMIN, /* Face X = 0 */
+	FACE_XMAX = 1, FACE_BIT_XMAX = 1 << FACE_XMAX, /* Face X = 1 */
+	FACE_ZMIN = 2, FACE_BIT_ZMIN = 1 << FACE_ZMIN, /* Face Z = 0 */
+	FACE_ZMAX = 3, FACE_BIT_ZMAX = 1 << FACE_ZMAX, /* Face Z = 1 */
+	FACE_YMIN = 4, FACE_BIT_YMIN = 1 << FACE_YMIN, /* Face Y = 0 */
+	FACE_YMAX = 5, FACE_BIT_YMAX = 1 << FACE_YMAX, /* Face Y = 1 */
 	FACE_COUNT= 6  /* Number of faces on a cube */
 };
 
@@ -75,14 +69,13 @@ enum SKIN_TYPE { SKIN_64x32, SKIN_64x64, SKIN_64x64_SLIM, SKIN_INVALID = 0xF0 };
 #define Int32_MinValue  ((cc_int32)-2147483647L - (cc_int32)1L)
 #define Int32_MaxValue  ((cc_int32)2147483647L)
 
-/* Skins were moved to use ClassiCube's content delivery network,
-so link directly to avoid a pointless redirect */
 #define SKINS_SERVER    "http://cdn.classicube.net/skin"
-#define UPDATES_SERVER  "http://cs.classicube.net/client"
+#define UPDATES_SERVER  "http://cdn.classicube.net/client"
 #define SERVICES_SERVER "https://www.classicube.net/api"
 #define RESOURCE_SERVER "http://static.classicube.net"
 /* Webpage where users can register for a new account */
 #define REGISTERNEW_URL "https://www.classicube.net/acc/register/"
+#define CLIENT_URL "https://github.com/RandomStrangers/HarmonyClient"
 
 #define DEFAULT_USERNAME "Singleplayer"
 #endif
