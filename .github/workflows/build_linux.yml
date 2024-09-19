@@ -41,7 +41,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 32 bit ₵l@$$!₵ub3 Linux build!'
+          NOTIFY_MESSAGE: 'Failed to compile 32 bit CC Linux build!'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
       
       
@@ -61,7 +61,7 @@ jobs:
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit ₵l@$$!₵ub3 Linux builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 32 bit CC Linux builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
 
 #============================================
@@ -90,7 +90,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 64 bit ₵l@$$!₵ub3 Linux build!'
+          NOTIFY_MESSAGE: 'Failed to compile 64 bit CC Linux build!'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -116,5 +116,5 @@ jobs:
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit ₵l@$$!₵ub3 Linux builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 64 bit CC Linux builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
