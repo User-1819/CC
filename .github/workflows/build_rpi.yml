@@ -42,7 +42,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 32 bit HarmonyClient RPI build! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile 32 bit CC RPI build! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -50,13 +50,13 @@ jobs:
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-rpi32'
-          DEST_NAME: 'HarmonyClient-rpi32'
+          DEST_NAME: 'CC-rpi32'
           
           
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit HarmonyClient RPI build.'
+          NOTIFY_MESSAGE: 'Successfully compiled 32 bit CC RPI build.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
 
 
@@ -90,7 +90,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 64 bit HarmonyClient RPI build! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile 64 bit CC RPI build! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -98,11 +98,11 @@ jobs:
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-rpi64'
-          DEST_NAME: 'HarmonyClient-rpi64'
+          DEST_NAME: 'CC-rpi64'
           
           
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit HarmonyClient RPI build.'
+          NOTIFY_MESSAGE: 'Successfully compiled 64 bit CC RPI build.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'

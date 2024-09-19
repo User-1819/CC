@@ -52,7 +52,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 32 bit HarmonyClient macOS builds! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile 32 bit CC macOS builds! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -60,23 +60,23 @@ jobs:
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-mac32-gl1'
-          DEST_NAME: 'HarmonyClient-mac32-OpenGL'
+          DEST_NAME: 'CC-mac32-OpenGL'
           
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-mac32-gl2'
-          DEST_NAME: 'HarmonyClient-mac32-ModernGL'
+          DEST_NAME: 'CC-mac32-ModernGL'
           
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile_ppc.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-mac32-ppc'
-          DEST_NAME: 'HarmonyClient-mac32-PPC'
+          DEST_NAME: 'CC-mac32-PPC'
           
           
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit HarmonyClient macOS builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 32 bit CC macOS builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'

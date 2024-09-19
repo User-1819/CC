@@ -37,19 +37,19 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 32 bit HarmonyClient Windows ARM build <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile 32 bit CC Windows ARM build <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-arm32-d3d11.exe'
-          DEST_NAME: 'HarmonyClient-arm32-Direct3D11.exe'
+          DEST_NAME: 'CC-arm32-Direct3D11.exe'
 
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit HarmonyClient Windows ARM builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 32 bit CC Windows ARM builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
 
 #============================================
@@ -77,17 +77,17 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 64 bit HarmonyClient Windows ARM build'
+          NOTIFY_MESSAGE: 'Failed to compile 64 bit CC Windows ARM build'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-arm64-d3d11.exe'
-          DEST_NAME: 'HarmonyClient-arm64-Direct3D11.exe'
+          DEST_NAME: 'CC-arm64-Direct3D11.exe'
 
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit HarmonyClient Windows ARM builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 64 bit CC Windows ARM builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'

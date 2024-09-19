@@ -45,7 +45,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile HarmonyClient NetBSD build(s)! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile CC NetBSD build(s)! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -53,11 +53,11 @@ jobs:
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-netbsd64-gl1'
-          DEST_NAME: 'HarmonyClient-NetBSD-64'
+          DEST_NAME: 'CC-NetBSD-64'
           
           
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit HarmonyClient NetBSD build.'
+          NOTIFY_MESSAGE: 'Successfully compiled 64 bit CC NetBSD build.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'

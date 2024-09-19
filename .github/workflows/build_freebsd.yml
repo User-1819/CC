@@ -56,7 +56,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile HarmonyClient FreeBSD build(s)! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile CC FreeBSD build(s)! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
@@ -64,23 +64,23 @@ jobs:
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-fbsd32-gl1'
-          DEST_NAME: 'HarmonyClient-FreeBSD-32'
+          DEST_NAME: 'CC-FreeBSD-32'
           
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-fbsd64-gl1'
-          DEST_NAME: 'HarmonyClient-FreeBSD-64'
+          DEST_NAME: 'CC-FreeBSD-64'
           
           
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit HarmonyClient FreeBSD builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 32 bit CC FreeBSD builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
 
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit HarmonyClient FreeBSD builds.'
+          NOTIFY_MESSAGE: 'Successfully compiled 64 bit CC FreeBSD builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'

@@ -28,7 +28,7 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile HarmonyClient Mac Classic build! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile CC Mac Classic build! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
 
 
@@ -36,16 +36,16 @@ jobs:
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'ClassiCube-68k.dsk'
-          DEST_NAME: 'HarmonyClient-68k.dsk'
+          DEST_NAME: 'CC-68k.dsk'
 
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'ClassiCube-ppc.dsk'
-          DEST_NAME: 'HarmonyClient-ppc.dsk'
+          DEST_NAME: 'CC-ppc.dsk'
 
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled HarmonyClient Mac Classic build.'
+          NOTIFY_MESSAGE: 'Successfully compiled CC Mac Classic build.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'

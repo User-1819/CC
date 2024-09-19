@@ -29,18 +29,18 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile HarmonyClient iOS build! <@999409543001931788>'
+          NOTIFY_MESSAGE: 'Failed to compile CC iOS build! <@999409543001931788>'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
       - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'ios/build/Release-iphoneos/cc.ipa'
-          DEST_NAME: 'HarmonyClient.ipa'
+          DEST_NAME: 'CC.ipa'
           
           
       - uses: ./.github/actions/notify_success
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          NOTIFY_MESSAGE: 'Successfully compiled HarmonyClient iOS build.'
+          NOTIFY_MESSAGE: 'Successfully compiled CC iOS build.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
