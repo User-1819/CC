@@ -278,7 +278,7 @@ static void WoM_CheckSendWomID(void) {
 	static const cc_string msg = String_FromConst("/womid WoMClient-2.0.7");
 
 	if (wom_sendId && !wom_sentId) {
-		Chat_Send(&msg, false);
+		Chat_Send(&msg, true);
 		wom_sentId = true;
 	}
 }
