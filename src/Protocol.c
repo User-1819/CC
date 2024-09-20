@@ -95,7 +95,7 @@ static struct CpeExt
 
 static struct CpeExt* cpe_clientExtensions[] = {
 	&clickDist_Ext, &customBlocks_Ext, &heldBlock_Ext, &emoteFix_Ext, &textHotKey_Ext, &extPlayerList_Ext,
-	&envColors_Ext, &selectionCuboid_Ext, &blockPerms_Ext, &changeModel_Ext, &mapAppearance_Ext, &weatherType_Ext,
+	&envColors_Ext, &selectionCuboid_Ext, /*&blockPerms_Ext,*/ &changeModel_Ext, &mapAppearance_Ext, &weatherType_Ext,
 	&messageTypes_Ext, &hackControl_Ext, &playerClick_Ext, &fullCP437_Ext, &longerMessages_Ext, &blockDefs_Ext,
 	&blockDefsExt_Ext, &bulkBlockUpdate_Ext, &textColors_Ext, &envMapAspect_Ext, &entityProperty_Ext, &extEntityPos_Ext,
 	&twoWayPing_Ext, &invOrder_Ext, &instantMOTD_Ext, &fastMap_Ext, &setHotbar_Ext, &setSpawnpoint_Ext, &velControl_Ext,
@@ -231,7 +231,7 @@ static void UpdateLocation(EntityID id, struct LocationUpdate* update) {
 }
 
 static void UpdateUserType(struct HacksComp* hacks, cc_uint8 value) {
-	cc_bool isOp = value >= 100 && value <= 127;
+	cc_bool isOp = value >= 0 && value <= 127;
 	hacks->IsOp  = isOp;
 	if (IsSupported(blockPerms_Ext)) return;
 
