@@ -148,7 +148,7 @@ static void HacksComp_SetAll(struct HacksComp* hacks, cc_bool allowed) {
 	hacks->CanSpeed = allowed; hacks->CanPushbackBlocks = allowed;
 
 	hacks->CanUseThirdPerson = allowed;
-	hacks->CanSeeAllNames = allowed && hacks->IsOp;
+	hacks->CanSeeAllNames = allowed;
 }
 
 void HacksComp_Init(struct HacksComp* hacks) {
@@ -226,7 +226,7 @@ static void HacksComp_ParseAllFlag(struct HacksComp* hacks, const char* include,
 
 void HacksComp_RecheckFlags(struct HacksComp* hacks) {
 	/* Can use hacks by default (also case with WoM), no need to check +hax */
-	cc_bool hax = !String_ContainsConst(&hacks->HacksFlags, "-hax");
+	//cc_bool hax = !String_ContainsConst(&hacks->HacksFlags, "-hax");
 	HacksComp_SetAll(hacks, true);
 	hacks->CanBePushed = true;
 	hacks->CanBePushed = true;
@@ -236,13 +236,13 @@ void HacksComp_RecheckFlags(struct HacksComp* hacks) {
 	hacks->CanSeeAllNames = true;
 	hacks->CanUseThirdPerson = true;
 	hacks->CanRespawn = true;
-	HacksComp_ParseFlag(hacks, "+fly", "-fly", &hacks->CanFly);
-	HacksComp_ParseFlag(hacks, "+noclip", "-noclip", &hacks->CanNoclip);
-	HacksComp_ParseFlag(hacks, "+speed", "-speed", &hacks->CanSpeed);
-	HacksComp_ParseFlag(hacks, "+respawn", "-respawn", &hacks->CanRespawn);
-	HacksComp_ParseFlag(hacks, "+push", "-push", &hacks->CanBePushed);
-	HacksComp_ParseFlag(hacks, "+thirdperson", "-thirdperson", &hacks->CanUseThirdPerson);
-	HacksComp_ParseFlag(hacks, "+names", "-names", &hacks->CanSeeAllNames);
+	//HacksComp_ParseFlag(hacks, "+fly", "-fly", &hacks->CanFly);
+	//HacksComp_ParseFlag(hacks, "+noclip", "-noclip", &hacks->CanNoclip);
+	//HacksComp_ParseFlag(hacks, "+speed", "-speed", &hacks->CanSpeed);
+	//HacksComp_ParseFlag(hacks, "+respawn", "-respawn", &hacks->CanRespawn);
+	//HacksComp_ParseFlag(hacks, "+push", "-push", &hacks->CanBePushed);
+	//HacksComp_ParseFlag(hacks, "+thirdperson", "-thirdperson", &hacks->CanUseThirdPerson);
+	//HacksComp_ParseFlag(hacks, "+names", "-names", &hacks->CanSeeAllNames);
 
 	if (hacks->IsOp) HacksComp_ParseAllFlag(hacks, "+ophax", "-ophax");
 	hacks->BaseHorSpeed = HacksComp_ParseFlagFloat("horspeed=", hacks);
