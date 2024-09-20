@@ -301,12 +301,12 @@ static void MPConnection_BeginConnect(void) {
 	String_InitArray(title, titleBuffer);
 
 	/* Default block permissions (in case server supports SetBlockPermissions but doesn't send) */
-	Blocks.CanPlace[BLOCK_AIR] = false;
-	Blocks.CanPlace[BLOCK_LAVA] = false;        Blocks.CanDelete[BLOCK_LAVA] = false;
-	Blocks.CanPlace[BLOCK_WATER] = false;       Blocks.CanDelete[BLOCK_WATER] = false;
-	Blocks.CanPlace[BLOCK_STILL_LAVA] = false;  Blocks.CanDelete[BLOCK_STILL_LAVA] = false;
-	Blocks.CanPlace[BLOCK_STILL_WATER] = false; Blocks.CanDelete[BLOCK_STILL_WATER] = false;
-	Blocks.CanPlace[BLOCK_BEDROCK] = false;     Blocks.CanDelete[BLOCK_BEDROCK] = false;
+	Blocks.CanPlace[BLOCK_AIR] = true;
+	Blocks.CanPlace[BLOCK_LAVA] = true;        Blocks.CanDelete[BLOCK_LAVA] = true;
+	Blocks.CanPlace[BLOCK_WATER] = true;       Blocks.CanDelete[BLOCK_WATER] = true;
+	Blocks.CanPlace[BLOCK_STILL_LAVA] = true;  Blocks.CanDelete[BLOCK_STILL_LAVA] = true;
+	Blocks.CanPlace[BLOCK_STILL_WATER] = true; Blocks.CanDelete[BLOCK_STILL_WATER] = true;
+	Blocks.CanPlace[BLOCK_BEDROCK] = true;     Blocks.CanDelete[BLOCK_BEDROCK] = true;
 	
 	res = Socket_ParseAddress(&Server.Address, Server.Port, addrs, &numValidAddrs);
 	if (res == ERR_INVALID_ARGUMENT) {
