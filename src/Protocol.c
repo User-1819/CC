@@ -233,7 +233,7 @@ static void UpdateLocation(EntityID id, struct LocationUpdate* update) {
 static void UpdateUserType(struct HacksComp* hacks, cc_uint8 value) {
 	cc_bool isOp = value >= 0 && value <= 127;
 	hacks->IsOp  = isOp;
-	if (IsSupported(blockPerms_Ext)) return;
+	//if (IsSupported(blockPerms_Ext)) return;
 
 	Blocks.CanPlace[BLOCK_BEDROCK]     = isOp;
 	Blocks.CanDelete[BLOCK_BEDROCK]    = isOp;
